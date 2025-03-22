@@ -171,7 +171,7 @@ Environment.Settings = {
 	TeamCheck = false,
 	AliveCheck = true,
 	WallCheck = false, -- Laggy
-	Sensitivity = 0, -- Animation length (in seconds) before fully locking onto target
+	Sensitivity = 13, -- Animation length (in seconds) before fully locking onto target
 	ThirdPerson = false, -- Uses mousemoverel instead of CFrame to support locking in third person (could be choppy)
 	ThirdPersonSensitivity = 3, -- Boundary: 0.1 - 5
 	TriggerKey = "MouseButton2",
@@ -388,15 +388,7 @@ Load()
  })
 
 
- local Toggle = SlazyTab:CreateToggle({
-	Name = "MM2 esp",
-	CurrentValue = false,
-	Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-	Callback = function(Value)
-		--[[
-    Credits to Kiriot22 for the Role getter <3
-        - poorly coded by FeIix <3
-]]
+ 
 
 -- > Declarations < --
 
@@ -466,143 +458,7 @@ end)
  })   
 
 
- local Button = SlazyTab:CreateButton({
-	Name = "Zombie animation changer",
-	Callback = function()
-		local AnimationChanger = Instance.new("ScreenGui")
-		local Main = Instance.new("Frame")
-		local TopBar = Instance.new("Frame")
-		local Close = Instance.new("TextButton")
-		local TextLabel = Instance.new("TextLabel")
-		local TextLabel_2 = Instance.new("TextLabel")
-		local NormalTab = Instance.new("Frame")
-		local A_Astronaut = Instance.new("TextButton")
-		local A_Bubbly = Instance.new("TextButton")
-		local A_Cartoony = Instance.new("TextButton")
-		local A_Elder = Instance.new("TextButton")
-		local A_Knight = Instance.new("TextButton")
-		local A_Levitation = Instance.new("TextButton")
-		local A_Mage = Instance.new("TextButton")
-		local A_Ninja = Instance.new("TextButton")
-		local A_Pirate = Instance.new("TextButton")
-		local A_Robot = Instance.new("TextButton")
-		local A_Stylish = Instance.new("TextButton")
-		local A_SuperHero = Instance.new("TextButton")
-		local A_Toy = Instance.new("TextButton")
-		local A_Vampire = Instance.new("TextButton")
-		local A_Werewolf = Instance.new("TextButton")
-		local A_Zombie = Instance.new("TextButton")
-		local Category = Instance.new("TextLabel")
-		local SpecialTab = Instance.new("Frame")
-		local A_Patrol = Instance.new("TextButton")
-		local A_Confident = Instance.new("TextButton")
-		local A_Popstar = Instance.new("TextButton")
-		local A_Cowboy = Instance.new("TextButton")
-		local A_Ghost = Instance.new("TextButton")
-		local A_Sneaky = Instance.new("TextButton")
-		local A_Princess = Instance.new("TextButton")
-		local Category_2 = Instance.new("TextLabel")
-		local OtherTab = Instance.new("Frame")
-		local Category_3 = Instance.new("TextLabel")
-		local A_None = Instance.new("TextButton")
-		local A_Anthro = Instance.new("TextButton")
-		local Animate = game.Players.LocalPlayer.Character.Animate
-		
-		AnimationChanger.Name = "Zombie"
-		AnimationChanger.Parent = game:WaitForChild("CoreGui")
-		AnimationChanger.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-		
-		Main.Name = "Main"
-		Main.Parent = AnimationChanger
-		Main.BackgroundColor3 = Color3.new(0.278431, 0.278431, 0.278431)
-		Main.BorderSizePixel = 0
-		Main.Position = UDim2.new(0.421999991, 0, -1, 0)
-		Main.Size = UDim2.new(0, 300, 0, 250)
-		Main.Active = true
-		Main.Draggable = true
-		
-		TopBar.Name = "TopBar"
-		TopBar.Parent = Main
-		TopBar.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
-		TopBar.BorderSizePixel = 0
-		TopBar.Size = UDim2.new(0, 300, 0, 30)
-		
-		Close.Name = "Close"
-		Close.Parent = TopBar
-		Close.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
-		Close.BorderSizePixel = 0
-		Close.Position = UDim2.new(0.899999976, 0, 0, 0)
-		Close.Size = UDim2.new(0, 30, 0, 30)
-		Close.Font = Enum.Font.SciFi
-		Close.Text = "S"
-		Close.TextColor3 = Color3.new(1, 0, 0.0156863)
-		Close.TextSize = 20
-		Close.MouseButton1Click:Connect(function()
-			wait(0.3)
-			Main:TweenPosition(UDim2.new(0.421999991, 0, -1.28400004, 0))
-			wait(3)
-			AnimationChanger:Destroy()
-		end)
-		
-		TextLabel.Parent = TopBar
-		TextLabel.BackgroundColor3 = Color3.new(255, 65, 1)
-		TextLabel.BackgroundTransparency = 1
-		TextLabel.BorderSizePixel = 0
-		TextLabel.Position = UDim2.new(0, 0, 0.600000024, 0)
-		TextLabel.Size = UDim2.new(0, 270, 0, 10)
-		TextLabel.Font = Enum.Font.SourceSans
-		TextLabel.Text = "Made by Slazy"
-		TextLabel.TextColor3 = Color3.new(1, 1, 1)
-		TextLabel.TextSize = 15
-		
-		TextLabel_2.Parent = TopBar
-		TextLabel_2.BackgroundColor3 = Color3.new(1, 1, 1)
-		TextLabel_2.BackgroundTransparency = 1
-		TextLabel_2.BorderSizePixel = 0
-		TextLabel_2.Position = UDim2.new(0, 0, -0.0266667679, 0)
-		TextLabel_2.Size = UDim2.new(0, 270, 0, 20)
-		TextLabel_2.Font = Enum.Font.SourceSans
-		TextLabel_2.Text = "Zombie"
-		TextLabel_2.TextColor3 = Color3.new(1, 1, 1)
-		TextLabel_2.TextSize = 20
-		
-		NormalTab.Name = "NormalTab"
-		NormalTab.Parent = Main
-		NormalTab.BackgroundColor3 = Color3.new(0.278431, 0.278431, 0.278431)
-		NormalTab.BackgroundTransparency = 1
-		NormalTab.BorderSizePixel = 0
-		NormalTab.Position = UDim2.new(0.5, 0, 0.119999997, 0)
-		NormalTab.Size = UDim2.new(0, 150, 0, 500)
-		
-		
-		
-		
-		
-		A_Zombie.Name = "A_Zombie"
-		A_Zombie.Parent = NormalTab
-		A_Zombie.BackgroundColor3 = Color3.new(0.196078, 0.196078, 0.196078)
-		A_Zombie.BorderSizePixel = 0
-		A_Zombie.Position = UDim2.new(0, 0, 0.0597896464, 0)
-		A_Zombie.Size = UDim2.new(0, 150, 0, 30)
-		A_Zombie.Font = Enum.Font.SciFi
-		A_Zombie.Text = "Zombie"
-		A_Zombie.TextColor3 = Color3.new(1, 1, 1)
-		A_Zombie.TextSize = 20
-		A_Zombie.MouseButton1Click:Connect(function()
-		Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=616158929"
-		Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=616160636"
-		Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616168032"
-		Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
-		Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=616161997"
-		Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=616156119"
-		Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=616157476"
-		game.Players.LocalPlayer.Character.Humanoid.Jump = true
-		end)
-		
-		wait(1)
-		Main:TweenPosition(UDim2.new(0.421999991, 0, 0.28400004, 0))
-	end,
- })
+ 
 
 
  local Button = SlazyTab:CreateButton({
